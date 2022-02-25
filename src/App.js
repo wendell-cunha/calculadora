@@ -95,6 +95,37 @@ clear = () => {
     }
   }
 
+  potencia = () => {
+    const {n1, n2} = this.state
+    if (n1 && n2 !== ""){
+      this.setState({
+        res: n1 ** n2
+      })
+    } else {
+      this.setState({
+        res: "Nenhum valor foi digitado."
+      })
+    }
+  }
+
+  exp = () => {
+    const {n1, n2} = this.state
+    if (n1 == ""){
+      this.setState({
+        res: Math.exp(n1)
+      })
+    } else if (n2 == ""){
+      this.setState({
+       res: Math.exp(n1)
+      })
+    } else {
+      this.setState({
+        res: "Nenhum valor foi digitado."
+      })
+    }
+  }
+  
+
 render(){
     return(
       <div className="container">
@@ -110,6 +141,8 @@ render(){
         <button onClick={this.divisao}>/</button>
         <button onClick={this.subtracao}>-</button>
         <button onClick={this.produto}>*</button>
+        <button onClick={this.potencia}>**</button>
+        <button onClick={this.exp}>exp</button>
         <button onClick={this.clear}>C</button>
       </div>     
       </div>
